@@ -15,7 +15,6 @@
 		flake_dir = ./.;
 		dotfiles_dir = ./system/modules/dotfiles;
 		system_path = ./system;
-		# pkgs = nixpkgs.legacyPackages.x86_64-linux;
 		testpkgs = inputs.unstable.legacyPackages.x86_64-linux;
 		system = "x86_64-linux";
 		in  
@@ -35,15 +34,5 @@
 				}
 			];
 		};
-
-	#	devShells.x86_64-linux.default = testpkgs.mkShell {
-	#		buildInputs = [  
-	#			neovim  
-	#			neofetch  
-	#			gcc
-	#		];
-	#	};
-
-	#	packages.x86_64-linux.default = pkgs.hello;
 	};
 }

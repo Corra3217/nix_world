@@ -9,6 +9,7 @@ let
 		alacritty = "alacritty";
 		fastfetch = "fastfetch";
 		rofi = "rofi";
+		hypr = "hypr";
 	};
 in
 {

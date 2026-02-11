@@ -1,6 +1,6 @@
 { config, lib, pkgs, testpkgs, ... }:
 {
-	imports = [ ./hardware-configuration.nix ];
+	imports = [ ./modules ];
 
 	system.stateVersion = "25.11";
 
@@ -38,8 +38,6 @@
 		displayManager.ly = {
 			enable = true;
 		};
-
-		desktopManager.plasma6.enable = true;
 	};
 
 	users = {
@@ -70,15 +68,6 @@
 		};
 	};
 
-	programs = {
-		steam = {
-			enable = true; 
-			gamescopeSession.enable = true;
-		};
-		gamescope.enable = true;
-		nh.enable = true;
-	};
-
 	environment.systemPackages = with pkgs; [
 		testpkgs.man-db
 		testpkgs.man-pages
@@ -106,7 +95,6 @@
 		pavucontrol
 		brightnessctl	
 		alacritty 
-		kitty
 		nano
 		vim
 		tree
