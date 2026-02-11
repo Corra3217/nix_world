@@ -1,5 +1,5 @@
 {
-	description = "My Allied desktop system flake";
+	description = "My P13s Thinkpad system flake";
 
 	inputs = {
 		unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
