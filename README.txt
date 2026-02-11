@@ -1,3 +1,10 @@
+Hyprland:
+
+To refresh the hyprland configuration, just run hyprctl restart, then everything should be alright!
+:D
+
+-----------------------------------------------------------------------------------
+
 Ethernet Sharing:
 
 To share your internet with another device that is plugged into yours via ethernet cables, you need to...
@@ -39,6 +46,16 @@ To fix this and go back to using your /etc/nixos directory, run the following -
 "sudo nixos-rebuild switch -I nixos-config=/etc/nixos/configuration.nix". 
 
 After that your usual commands should work.
+
+:)
+
+Another thing to note is that sometimes after editing the files, you will get some nonsensical errors. 
+You should try and make sure git sees all the files before you move on. 
+As flakes are reliant on git, if git hs an error, then the flake will have an error.
+A common error for example is a file not being found, despite there being absolutely no reason the file shouldn't be found.
+
+To fix this, just go to a parent directory and run "git add -A"
+Everything should just work out fine after this.
 
 -------------------------------------------------------------------------------------
 
