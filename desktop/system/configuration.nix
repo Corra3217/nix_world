@@ -6,17 +6,11 @@
 
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-	boot = {
-		kernelModules = [ "rtw89pci" "rtw89usb" ];
-		kernelPackages = pkgs.linuxPackages_latest;
-		loader = {
-			systemd-boot.enable = true;
-			efi.canTouchEfiVariables = true;
-		};
+	boot.loader = {
+		systemd-boot.enable = true;
+		efi.canTouchEfiVariables = true;
 	};
 
-	hardware.enableRedistributableFirmware = true;
-	hardware.bluetooth.enable = true;
 
 	networking.hostName = "NixPad";
 	networking.networkmanager.enable = true;
@@ -62,7 +56,7 @@
 		usbutils
 		wl-clipboard
 
-#		rofi
+		rofi
 #		pamixer
 #		pavucontrol
 #		brightnessctl	
