@@ -40,34 +40,6 @@
 		};
 	};
 
-	users = {
-		extraGroups.vboxusers.members = [ "nixuser" ];
-		users.nixuser = {
-			isNormalUser = true;
-			extraGroups = [ "wheel" "networkmanager" ];
-			packages = with pkgs; [ 
-				testpkgs.gcc
-				testpkgs.tor-browser
-				testpkgs.tigervnc
-				testpkgs.fastfetch
-				testpkgs.vlc
-				kdePackages.elisa
-				discord
-				pipes
-				cava
-			];
-		};
-	};
-
-	virtualisation.virtualbox = {
-		host = {
-			enable = true;
-			enableExtensionPack = true;
-			enableKvm = true;
-			addNetworkInterface = false;
-		};
-	};
-
 	environment.systemPackages = with pkgs; [
 		testpkgs.man-db
 		testpkgs.man-pages
@@ -90,10 +62,10 @@
 		usbutils
 		wl-clipboard
 
-		rofi
-		pamixer
-		pavucontrol
-		brightnessctl	
+#		rofi
+#		pamixer
+#		pavucontrol
+#		brightnessctl	
 		alacritty 
 		nano
 		vim

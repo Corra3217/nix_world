@@ -2,6 +2,8 @@
 {
 	imports = [
 		./hardware-configuration.nix
-		./desktops.nix
+		./users.nix
+		./desktops
+		./virtualisation.nix
 	];
 }

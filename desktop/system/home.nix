@@ -10,6 +10,7 @@ let
 		fastfetch = "fastfetch";
 		rofi = "rofi";
 		hypr = "hypr";
+		qtile = "qtile";
 	};
 in
 {
