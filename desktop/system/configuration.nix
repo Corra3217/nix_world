@@ -6,14 +6,14 @@
 
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-	boot.loader = {
-		systemd-boot.enable = true;
-		efi.canTouchEfiVariables = true;
+	boot.loader.systemd-boot.enable = true;
+	boot.loader.efi.canTouchEfiVariables = true;
+
+	networking = {
+		hostName = "NixPad";
+		networkmanager.enable = true;
+		firewall.enable = true;
 	};
-
-
-	networking.hostName = "NixPad";
-	networking.networkmanager.enable = true;
 
 	time.timeZone = "Australia/Sydney";
 
@@ -38,32 +38,29 @@
 		testpkgs.man-db
 		testpkgs.man-pages
 		testpkgs.man-pages-posix
-		testpkgs.tealdeer
-		testpkgs.git
 		testpkgs.firefox
+		testpkgs.git
+		testpkgs.tealdeer
 		testpkgs.vlc
 		testpkgs.wayland-utils
 
 		kdePackages.isoimagewriter 
 		kdePackages.partitionmanager
 
+		nano
+		vim
+		tree
 		ascii
 		wget
 		htop
 		iwd
 		tealdeer
-		hardinfo2 
 		usbutils
 		wl-clipboard
 
+		hardinfo2 
 		rofi
-#		pamixer
-#		pavucontrol
-#		brightnessctl	
 		alacritty 
-		nano
-		vim
-		tree
 		gedit
 		nil
 		gimp

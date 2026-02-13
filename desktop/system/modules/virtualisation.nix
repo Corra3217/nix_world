@@ -1,5 +1,6 @@
 { ... }:
 {
+	users.extraGroups.vboxusers.members = [ "nixuser" ];
 	virtualisation.virtualbox = {
 		host = {
 			enable = true;
