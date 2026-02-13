@@ -6,5 +6,6 @@
 		./users.nix
 		./desktops
 		./virtualisation.nix
+		./steam.nix
 	];
 }

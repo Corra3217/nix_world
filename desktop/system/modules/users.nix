@@ -8,6 +8,8 @@ generic_user = {
 			testpkgs.tor-browser
 			testpkgs.tigervnc
 			testpkgs.fastfetch
+			testpkgs.gcc
+			testpkgs.clang
 			kdePackages.elisa
 			discord
 	];
