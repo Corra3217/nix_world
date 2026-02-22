@@ -19,7 +19,7 @@
 		system = "x86_64-linux";
 		in  
 	{  
-		nixosConfigurations.NixPad = nixpkgs.lib.nixosSystem {
+		nixosConfigurations.NixBox = nixpkgs.lib.nixosSystem {
 			inherit system;	
 			specialArgs = { inherit inputs testpkgs system; };
 			modules = [

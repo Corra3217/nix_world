@@ -1,6 +1,6 @@
 { config, lib, pkgs, testpkgs, ... }:
 {
-	imports = [ ./hardware-configuration.nix ];
+	imports = [ ./modules ];
 
 	system.stateVersion = "25.11";
 	
@@ -9,8 +9,11 @@
 	boot.loader.systemd-boot.enable = true;
 	boot.loader.efi.canTouchEfiVariables = true;
 
-	networking.hostName = "NixPad";
-	networking.networkmanager.enable = true;
+	networking = {
+		hostName = "NixPad";
+		networkmanager.enable = true;
+		firewall.enable = true;
+	};
 
 	time.timeZone = "Australia/Sydney";
 
@@ -19,63 +22,18 @@
 	nixpkgs.config.allowUnfree = true;
 
 	services = {
-		libinput.enable = true;
-		logind.settings.Login = {
-			HandleLidSwitch = "lock";
-			HandleLidSwitchExternalPower = "lock";
-			HandleLidSwitchDocked = "lock";
-		};
+#		blueman.enable = true;
 		pipewire = {
 			enable = true;
 			pulse.enable = true;
-		};
-		xserver = {
-			enable = true;
-			desktopManager.xfce.enable = true;
-			windowManager.qtile.enable = true;			
 		};
 		displayManager.sddm = {
 			enable = true;
 			wayland.enable = true;
 			theme = "where-is-my-sddm-theme";
 		};
-		picom = {
-			enable = false;
-			backend = "glx";
-			fade = true;
-			activeOpacity = 1.0;
-			inactiveOpacity = 1.0;
-		};
 	};
 
-	users = {
-		extraGroups.vboxusers.members = [ "nixuser" ];
-		users.nixuser = {
-			isNormalUser = true;
-			extraGroups = [ "wheel" "networkmanager" ];
-			packages = with pkgs; [ 
-				testpkgs.gcc
-				testpkgs.tor-browser
-				testpkgs.tigervnc
-				testpkgs.fastfetch
-				testpkgs.vlc
-				kdePackages.elisa
-				discord
-				pipes
-				cava
-			];
-		};
-	};
-
-	virtualisation.virtualbox = {
-		host = {
-			enable = true;
-			enableExtensionPack = true;
-			enableKvm = true;
-			addNetworkInterface = false;
-		};
-	};
-	
 	environment.systemPackages = with pkgs; [
 		testpkgs.man-db
 		testpkgs.man-pages

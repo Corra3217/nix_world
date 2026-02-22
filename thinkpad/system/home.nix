@@ -4,12 +4,13 @@ let
 	create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
 	snr = "sudo nixos-rebuild ";
 	etc-flag = " -I nixos-config=/etc/nixos/configuration.nix";
-	flake-flag = " --flake ~/nix_world/thinkpad#NixPad";
+	flake-flag = " --flake ~/nix_world/desktop#NixPad";
 	configs = {
 		alacritty = "alacritty";
 		fastfetch = "fastfetch";
-		qtile = "qtile";
 		rofi = "rofi";
+		hypr = "hypr";
+		qtile = "qtile";
 	};
 in
 {
@@ -49,6 +50,7 @@ in
 				ff = "clear && fastfetch";
 				btw = "echo I use NixOS, btw";
 
+				# needs those ports open
 				giveEthernet = "nmcli connection show && nmcli connection modify \"Wired connection 1\" ipv4.method shared && nmcli connection modify \"Wired connection 1\" ipv6.method ignore && nmcli connection down \"Wired connection 1\" && nmcli connection up \"Wired connection 1\"";
 			};
 		};

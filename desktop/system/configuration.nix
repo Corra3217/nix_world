@@ -10,7 +10,7 @@
 	boot.loader.efi.canTouchEfiVariables = true;
 
 	networking = {
-		hostName = "NixPad";
+		hostName = "NixBox";
 		networkmanager.enable = true;
 		firewall.enable = true;
 	};
@@ -60,6 +60,8 @@
 
 		hardinfo2 
 		rofi
+		pamixer
+		brightnessctl
 		alacritty 
 		gedit
 		nil

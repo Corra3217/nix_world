@@ -1,9 +1,9 @@
 { ... }:
 {
 	imports = [
-		./kde.nix
+#		./kde.nix
 		./xfce.nix
 #		./hyprland.nix
-#		./qtile.nix
+		./qtile.nix
 	];
 }

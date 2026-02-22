@@ -1,5 +1,5 @@
 {
-	description = "My P13s Thinkpad system flake";
+	description = "My Thinkpad P13s system flake";
 
 	inputs = {
 		unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";

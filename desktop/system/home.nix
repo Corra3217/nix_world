@@ -4,7 +4,7 @@ let
 	create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
 	snr = "sudo nixos-rebuild ";
 	etc-flag = " -I nixos-config=/etc/nixos/configuration.nix";
-	flake-flag = " --flake ~/nix_world/desktop#NixPad";
+	flake-flag = " --flake ~/nix_world/desktop#NixBox";
 	configs = {
 		alacritty = "alacritty";
 		fastfetch = "fastfetch";
