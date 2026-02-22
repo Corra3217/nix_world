@@ -11,6 +11,7 @@ let
 		rofi = "rofi";
 		hypr = "hypr";
 		qtile = "qtile";
+		xfce = "xfce4";
 	};
 in
 {
