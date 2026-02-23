@@ -14,6 +14,11 @@
           <property name="backdrop-cycle-timer" type="uint" value="10"/>
         </property>
       </property>
+      <property name="monitoreDP-1" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="last-image" type="string" value="/home/nixuser/pictures/background/underwater.jpg"/>
+        </property>
+      </property>
     </property>
   </property>
   <property name="desktop-icons" type="empty">
@@ -43,7 +48,7 @@
     <property name="confirm-sorting" type="bool" value="false"/>
   </property>
   <property name="last" type="empty">
-    <property name="window-width" type="int" value="640"/>
+    <property name="window-width" type="int" value="653"/>
     <property name="window-height" type="int" value="559"/>
   </property>
 </channel>

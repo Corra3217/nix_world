@@ -5,12 +5,12 @@
   <property name="Notify" type="int" value="1"/>
   <property name="AutoEnableProfiles" type="int" value="3"/>
   <property name="Default" type="empty">
-    <property name="HDMI-1" type="string" value="Samsung 28&quot;">
+    <property name="eDP-1" type="string" value="Laptop">
       <property name="Active" type="bool" value="true"/>
-      <property name="EDID" type="string" value="ba0a4930004fb5f108a448677fbf038ab40122e5"/>
-      <property name="Resolution" type="string" value="2880x1620"/>
-      <property name="RefreshRate" type="double" value="59.960257509067048"/>
-      <property name="ModeFlags" type="uint64" value="6"/>
+      <property name="EDID" type="string" value="26d2cb324d486eaee8593e24a3f82fe041e8ad7a"/>
+      <property name="Resolution" type="string" value="1920x1200"/>
+      <property name="RefreshRate" type="double" value="59.950171286203677"/>
+      <property name="ModeFlags" type="uint64" value="9"/>
       <property name="Rotation" type="int" value="0"/>
       <property name="Reflection" type="string" value="0"/>
       <property name="Primary" type="bool" value="false"/>

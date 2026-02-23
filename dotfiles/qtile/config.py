@@ -136,7 +136,7 @@ screens = [
                 border_color=["ffffff", "000000", "000000", "000000"]
                 ),
             background="#00000000",
-            wallpaper=os.path.join(os.path.dirname("/home/pictures/"), "underwater.png"),
+            wallpaper=os.path.join(os.path.dirname("~/pictures/background/"), "underwater.jpg"),
             wallpaper_mode="fill",
             ),
         ]

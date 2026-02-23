@@ -4,6 +4,47 @@
 configs:
 - level: 0
   monitors:
+  - id: "f07e5fe9ee140ba5b852d663ba69260616653176"
+    display_name: "AU Optronics 0xF99B (eDP-1)"
+    geometry:
+      x: 0
+      y: 0
+      width: 1920
+      height: 1200
+  icons:
+    "trash:///":
+      row: 7
+      col: 2
+    "/home/nixuser":
+      row: 7
+      col: 0
+    "/home/nixuser/files":
+      row: 7
+      col: 8
+    "00A1-BA1D":
+      row: 7
+      col: 9
+      last_seen: 1771766133611360
+    "/home/nixuser/nix_world":
+      row: 7
+      col: 3
+    "/home/nixuser/old_nix_world":
+      row: 7
+      col: 4
+    "/home/nixuser/VirtualBox VMs":
+      row: 7
+      col: 7
+    "/home/nixuser/Downloads":
+      row: 7
+      col: 5
+    "/":
+      row: 7
+      col: 1
+    "/home/nixuser/pictures":
+      row: 7
+      col: 6
+- level: 0
+  monitors:
   - id: "81bbf3d0d419e88cbcfce8785ed03f47941ab630"
     display_name: "Samsung Electric Company U28E590 H4ZMC01174 (HDMI-1)"
     geometry:
@@ -39,22 +80,15 @@ configs:
     "/home/nixuser/.pulse-cookie":
       row: 1
       col: 13
-    "/home/nixuser":
-      row: 10
-      col: 1
-    "/home/nixuser/.vim":
-      row: 1
-      col: 15
     "/home/nixuser/temp":
       row: 10
       col: 12
+    "/home/nixuser/.vim":
+      row: 1
+      col: 15
     "/home/nixuser/.cache":
       row: 0
       col: 4
-    "00A1-BA1D":
-      row: 10
-      col: 3
-      last_seen: 1771638194557734
     "/home/nixuser/.vimrc":
       row: 1
       col: 20
@@ -67,9 +101,6 @@ configs:
     "/home/nixuser/gol":
       row: 10
       col: 6
-    "/home/nixuser/Downloads":
-      row: 10
-      col: 4
     "/home/nixuser/.ICEauthority":
       row: 1
       col: 24
@@ -85,48 +116,33 @@ configs:
     "/home/nixuser/.nix-defexpr":
       row: 0
       col: 7
-    "/home/nixuser/nix_world":
-      row: 10
-      col: 9
     "/home/nixuser/.local":
       row: 0
       col: 8
     "/home/nixuser/gif":
       row: 10
       col: 5
-    "/home/nixuser/pictures":
-      row: 10
-      col: 10
-    "/home/nixuser/.bash_history":
-      row: 0
-      col: 3
-    "/home/nixuser/.profile":
-      row: 1
-      col: 25
-    "/home/nixuser/.bashrc":
-      row: 1
-      col: 22
-    "/home/nixuser/nix_thing":
-      row: 10
-      col: 8
     "/home/nixuser/.icons":
       row: 1
       col: 12
+    "/home/nixuser/.bash_history":
+      row: 0
+      col: 3
+    "/home/nixuser/.bashrc":
+      row: 1
+      col: 22
     "/home/nixuser/.ssh":
       row: 1
       col: 18
-    "/":
+    "/home/nixuser/.profile":
+      row: 1
+      col: 25
+    "/home/nixuser/nix_thing":
       row: 10
-      col: 0
+      col: 8
     "/home/nixuser/.bash_profile":
       row: 1
       col: 23
-    "trash:///":
-      row: 10
-      col: 2
-    "/home/nixuser/VirtualBox VMs":
-      row: 10
-      col: 13
     "/home/nixuser/.steampid":
       row: 1
       col: 19
