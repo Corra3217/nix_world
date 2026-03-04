@@ -9,6 +9,11 @@
 	boot.loader.systemd-boot.enable = true;
 	boot.loader.efi.canTouchEfiVariables = true;
 
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
 	networking = {
 		hostName = "NixBox";
 		networkmanager.enable = true;
@@ -46,6 +51,7 @@
 
 		kdePackages.isoimagewriter 
 		kdePackages.partitionmanager
+    kdePackages.filelight
 
 		nano
 		vim

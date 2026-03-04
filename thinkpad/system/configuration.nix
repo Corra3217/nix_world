@@ -47,7 +47,6 @@
 
 		kdePackages.isoimagewriter 
 		kdePackages.partitionmanager
-		kdePackages.dolphin
 
 		ascii
 		wget
@@ -72,3 +71,4 @@
 		gimp
 	];
 }
+
