@@ -7,5 +7,6 @@
 		./desktops
 		./virtualisation.nix
 		./steam.nix
+    ./unity3D.nix
 	];
 }

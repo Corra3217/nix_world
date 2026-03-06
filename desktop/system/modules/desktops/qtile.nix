@@ -13,9 +13,9 @@
 
 	environment.systemPackages = with pkgs; [
 		rofi
-			pamixer
-			pavucontrol
-			brightnessctl
-			alacritty
+    pamixer
+    pavucontrol
+    brightnessctl
+    alacritty
 	];
 }
