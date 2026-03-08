@@ -13,6 +13,7 @@ cd into the device folder you would like to replicate, then rebuild your system
 with that flake accordingly.
 
 Here is a tree to visualise all the files :D
+
 .
 ├── desktop
 │   ├── flake.lock
@@ -32,6 +33,7 @@ Here is a tree to visualise all the files :D
 │           │   └── xfce.nix
 │           ├── hardware-configuration.nix
 │           ├── steam.nix
+│           ├── unity3D.nix
 │           ├── users.nix
 │           ├── virtualisation.nix
 │           └── wifi.nix
@@ -53,8 +55,32 @@ Here is a tree to visualise all the files :D
 │   │   ├── README.md
 │   │   └── themes
 │   │       └── arc-red-dark.rasi
-│   └── vim
-│       └── vimrc
+│   ├── vim
+│   │   └── vimrc
+│   └── xfce4
+│       ├── desktop
+│       │   ├── accels.scm
+│       │   └── icons.screen0.yaml
+│       ├── helpers.rc
+│       ├── panel
+│       ├── xfconf
+│       │   └── xfce-perchannel-xml
+│       │       ├── displays.xml
+│       │       ├── thunar.xml
+│       │       ├── xfce4-appfinder.xml
+│       │       ├── xfce4-desktop.xml
+│       │       ├── xfce4-keyboard-shortcuts.xml
+│       │       ├── xfce4-mime-settings.xml
+│       │       ├── xfce4-notifyd.xml
+│       │       ├── xfce4-panel.xml
+│       │       ├── xfce4-power-manager.xml
+│       │       ├── xfce4-screensaver.xml
+│       │       ├── xfce4-settings-manager.xml
+│       │       ├── xfce4-taskmanager.xml
+│       │       ├── xfwm4.xml
+│       │       └── xsettings.xml
+│       └── xfwm4
+├── README.txt
 ├── thinkpad
 │   ├── flake.lock
 │   ├── flake.nix
@@ -81,4 +107,4 @@ Here is a tree to visualise all the files :D
     ├── flake.lock
     └── flake.nix
 
-21 directories, 46 files
+27 directories, 65 files
