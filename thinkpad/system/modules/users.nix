@@ -5,6 +5,7 @@ generic_user = {
 	extraGroups = [ "wheel" "networkmanager" ];
 	packages = with pkgs; [
 			kdePackages.elisa
+      fastfetch
 			discord
 	];
 };
