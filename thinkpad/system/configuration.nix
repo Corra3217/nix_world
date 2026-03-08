@@ -35,40 +35,51 @@
 	};
 
 	environment.systemPackages = with pkgs; [
+    # unstable packages
 		testpkgs.man-db
 		testpkgs.man-pages
 		testpkgs.man-pages-posix
 		testpkgs.tealdeer
 		testpkgs.git
-		testpkgs.firefox
-		testpkgs.vlc
 		testpkgs.wayland-utils
-		testpkgs.pcmanfm
+    testpkgs.gcc
+    testpkgs.clang
 
+    # user apps
+    testpkgs.tor-browser
+		testpkgs.firefox
+    testpkgs.signal-desktop
+		testpkgs.pcmanfm
+		testpkgs.vlc
+    zathura
+
+    # kde packages
 		kdePackages.isoimagewriter 
 		kdePackages.partitionmanager
+    kdePackages.filelight
+    kdePackages.elisa
 
+    # cli
+    tree
 		ascii
 		wget
 		htop
+    vim
 		iwd
 		tealdeer
-		hardinfo2 
 		usbutils
-		wl-clipboard
+    neofetch
 
+    # system apps
 		rofi
 		pamixer
 		pavucontrol
 		brightnessctl	
 		alacritty 
 		kitty
-		nano
-		vim
-		tree
-		gedit
+		hardinfo2 
+		wl-clipboard
 		nil
-		gimp
 	];
 }
 

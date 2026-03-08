@@ -54,11 +54,11 @@
     testpkgs.tor-browser
 		testpkgs.firefox
     testpkgs.signal-desktop
-		testpkgs.gimp
+		# testpkgs.gimp
 		testpkgs.vlc
     zathura
 
-    # kdePackages
+    # kde packages 
 		kdePackages.isoimagewriter 
 		kdePackages.partitionmanager
     kdePackages.filelight
