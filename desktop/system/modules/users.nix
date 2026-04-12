@@ -3,11 +3,7 @@ let
 generic_user = { 
 	isNormalUser = true;
 	extraGroups = [ "wheel" "networkmanager" ];
-	packages = with pkgs; [
-			testpkgs.tigervnc
-			fastfetch
-			discord
-	];
+	packages = with pkgs; [ ];
 };
 in
 {

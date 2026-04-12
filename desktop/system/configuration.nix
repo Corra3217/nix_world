@@ -34,9 +34,13 @@
 			pulse.enable = true;
 		};
 
-		displayManager.ly = {
-			enable = true;
-		};
+    displayManager.gdm.enable = true;
+    desktopManager.gnome = {
+      enable = true;
+      core-apps.enable = false;
+      core-developer-tools.enable = false;
+      games.enable = false;
+    }
 	};
 
 	environment.systemPackages = with pkgs; [
@@ -44,9 +48,6 @@
 		testpkgs.man-db
 		testpkgs.man-pages
 		testpkgs.man-pages-posix
-		testpkgs.git
-		testpkgs.tealdeer
-		testpkgs.wayland-utils
     testpkgs.gcc
     testpkgs.clang
 
@@ -54,18 +55,13 @@
     testpkgs.tor-browser
 		testpkgs.firefox
     testpkgs.signal-desktop
-		# testpkgs.gimp
+    testpkgs.discord
+    testpkgs.tigervnc
 		testpkgs.vlc
     zathura
 
-    # kde packages 
-		kdePackages.isoimagewriter 
-		kdePackages.partitionmanager
-    kdePackages.filelight
-    kdePackages.elisa
-
     # cli
-		nano
+    neovim
 		vim
 		tree
 		ascii
@@ -77,12 +73,7 @@
     neofetch
 
     # system apps
-		wl-clipboard
 		hardinfo2 
-		rofi
-		pamixer
-		brightnessctl
-		alacritty 
 		nil
 	];
 }

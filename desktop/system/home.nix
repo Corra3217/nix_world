@@ -11,6 +11,7 @@ let
 		rofi = "rofi";
 		hypr = "hypr";
 		qtile = "qtile";
+    xfce = "xfce4";
 	};
 in
 {
@@ -46,12 +47,6 @@ in
 				rebuildf = snr + "switch" + flake-flag;
 				redof = snr + "boot" + flake-flag + " && reboot";
 				testf = snr + "test" + flake-flag;
-
-				ff = "clear && fastfetch";
-				btw = "echo I use NixOS, btw";
-
-				# needs those ports open
-				giveEthernet = "nmcli connection show && nmcli connection modify \"Wired connection 1\" ipv4.method shared && nmcli connection modify \"Wired connection 1\" ipv6.method ignore && nmcli connection down \"Wired connection 1\" && nmcli connection up \"Wired connection 1\"";
 			};
 		};
 	};
