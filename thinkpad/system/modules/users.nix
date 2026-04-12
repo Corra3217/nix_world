@@ -6,7 +6,6 @@ generic_user = {
 	packages = with pkgs; [
 			kdePackages.elisa
       fastfetch
-			discord
 	];
 };
 in

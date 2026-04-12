@@ -13,6 +13,10 @@
 		hostName = "NixPad";
 		networkmanager.enable = true;
 		firewall.enable = true;
+    firewall.allowedUDPPorts = [
+      53
+      67 
+    ];
 	};
 
 	time.timeZone = "Australia/Sydney";
@@ -49,13 +53,18 @@
     testpkgs.tor-browser
 		testpkgs.firefox
     testpkgs.signal-desktop
+    testpkgs.tigervnc
 		testpkgs.pcmanfm
 		testpkgs.vlc
+    testpkgs.blender
+    testpkgs.nmap
+    testpkgs.netcat
     zathura
 
     # kde packages
 		kdePackages.isoimagewriter 
 		kdePackages.partitionmanager
+    kdePackages.dolphin
     kdePackages.filelight
     kdePackages.elisa
 
