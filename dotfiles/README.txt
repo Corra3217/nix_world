@@ -1,0 +1,83 @@
+Hyprland:
+
+To refresh the hyprland configuration, just run hyprctl restart, then everything should be alright!
+:D
+
+-----------------------------------------------------------------------------------
+
+Ethernet Sharing:
+
+To share your internet with another device that is plugged into yours via ethernet cables, you need to...
+
+1) Put this into your configuration... "
+networking.firewall.allowedUDPPorts = [
+	53
+	67
+];"
+
+2) Make sure this is also in your configuration... "
+networking.networkmanager.enable = true;"
+
+3) Then run these commands in your terminal... "
+nmcli connection show
+nmcli connection modify "Wired connection 1" ipv4.method shared
+nmcli connection modify "Wired connection 1" ipv6.method ignore
+nmcli connection down "Wired connection 1"
+nmcli connection up "Wired connection 1"
+"
+OR
+
+run this
+
+nmcli connection show && nmcli connection modify "Wired connection 1" ipv4.method shared && nmcli connection modify "Wired connection 1" ipv6.method ignore && nmcli connection down "Wired connection 1" && nmcli connection up "Wired connection 1"
+
+Then everything should work on your connected computer! Yay :D
+
+--------------------------------------------------------------------------------------
+
+Flakes:
+
+After running "sudo nixos-rebuild switch --flake ~/dotfiles#NixPad", you will get the following error message - 
+"error: file 'nixos-config' was not found in the Nix search path (add it using $NIX_PATH or -I)
+Command 'nix-build '<nixpkgs/nixos>' --attr config.system.build.nixos-rebuild --no-out-link' returned non-zero exit status 1.". 
+
+This just means that because you specified a path to a flake before, it's expecting a path to be proclaimed at all times. 
+To fix this and go back to using your /etc/nixos directory, run the following - 
+"sudo nixos-rebuild switch -I nixos-config=/etc/nixos/configuration.nix". 
+
+After that your usual commands should work.
+
+:)
+
+Another thing to note is that sometimes after editing the files, you will get some nonsensical errors. 
+You should try and make sure git sees all the files before you move on. 
+As flakes are reliant on git, if git hs an error, then the flake will have an error.
+A common error for example is a file not being found, despite there being absolutely no reason the file shouldn't be found.
+
+To fix this, just go to a parent directory and run "git add -A"
+Everything should just work out fine after this.
+
+-------------------------------------------------------------------------------------
+
+Bootloader:
+
+These two lines definetly work, so if grub does not work, then this does - "
+boot.loader.systemd-boot.enable = true;
+boot.loader.efi.canTouchEfiVariables = true;"
+
+Otherwise this grub set should work too - "
+boot.loader = {
+	systemd-boot.enable = false;
+	grub = {
+		enable = true;
+		device = "nodev";
+		useOSProber = true;
+		efiSupport = true;
+	};
+	efi = {
+		canTouchEfiVariables = true;
+		efiSysMountPoint = "/boot";
+	};
+};"
+
+HOWEVER! ~ I don't know why but grub seems to make a new boot directory called "NixOS-bootloader" which takes priority. Undoing grub from your system seems tedious and I am not sure how to do it yet. Unless you have a reason to even use grub, I wouldn't. I accidently broke my system trying to remove it - note that you should definetly read how to back it up and use the grub recovery mode!
