@@ -9,10 +9,13 @@
 	boot.loader.systemd-boot.enable = true;
 	boot.loader.efi.canTouchEfiVariables = true;
 
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
+	hardware = {
+		bluetooth.enable = true;
+		graphics = {
+			enable = true;
+			enable32Bit = true;
+		};
+	};
 
 	networking = {
 		hostName = "NixBox";
@@ -24,8 +27,6 @@
 
 	powerManagement.enable = true;
 
-	nixpkgs.config.allowUnfree = true;
-
 	services = {
 		blueman.enable = true;
 
@@ -34,46 +35,50 @@
 			pulse.enable = true;
 		};
 
-    displayManager.gdm.enable = true;
-    desktopManager.gnome = {
-      enable = true;
-      core-apps.enable = false;
-      core-developer-tools.enable = false;
-      games.enable = false;
-    }
+		displayManager.gdm.enable = true;
+		desktopManager.gnome.enable = true;
+		gnome = {
+			core-apps.enable = true;
+			games.enable = false;	
+		};
 	};
 
-	environment.systemPackages = with pkgs; [
-    # unstable packages
-		testpkgs.man-db
-		testpkgs.man-pages
-		testpkgs.man-pages-posix
-    testpkgs.gcc
-    testpkgs.clang
+		environment.systemPackages = with pkgs; [
+			# unstable packages
+			testpkgs.man-db
+			testpkgs.man-pages
+			testpkgs.man-pages-posix
+			testpkgs.gcc
+			testpkgs.clang
+			testpkgs.git 
 
-    # user apps
-    testpkgs.tor-browser
-		testpkgs.firefox
-    testpkgs.signal-desktop
-    testpkgs.discord
-    testpkgs.tigervnc
-		testpkgs.vlc
-    zathura
+			# user apps
+			testpkgs.tor-browser
+			testpkgs.firefox
+			testpkgs.signal-desktop
+			testpkgs.tigervnc
+			testpkgs.vlc
+			zathura
 
-    # cli
-    neovim
-		vim
-		tree
-		ascii
-		wget
-		htop
-		iwd
-		tealdeer
-		usbutils
-    neofetch
+			# cli
+			neovim
+			vim
+			tree
+			ascii
+			wget
+			htop
+			iwd
+			tealdeer
+			usbutils
+			neofetch
 
-    # system apps
-		hardinfo2 
-		nil
-	];
-}
+			# system apps
+			gnome-tweaks
+		        gnome-console
+		        gnome-terminal
+		        gnome-bluetooth
+		        gnome-commander
+			hardinfo2 
+			nil
+				];
+	}
