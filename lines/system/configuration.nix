@@ -9,13 +9,6 @@
 	boot.loader.systemd-boot.enable = true;
 	boot.loader.efi.canTouchEfiVariables = true;
 
-	hardware = {
-		bluetooth.enable = true;
-		graphics = {
-			enable = true;
-			enable32Bit = true;
-		};
-	};
 
 	networking = {
 		hostName = "NixBox";
@@ -33,6 +26,8 @@
 
 	services = {
 		blueman.enable = true;
+		power-profiles-daemon.enable = true;
+		thermald.enable = true;
 
 		pipewire = {
 			enable = true;
@@ -57,7 +52,7 @@
 			testpkgs.git 
 
 			# user apps
-			testpkgs.tor-browser
+			# testpkgs.tor-browser
 			testpkgs.firefox
 			testpkgs.signal-desktop
 			testpkgs.tigervnc

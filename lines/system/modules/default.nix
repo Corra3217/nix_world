@@ -1,9 +1,10 @@
 { lib, ... }:
 {
 	imports = [
-		./hardware-configuration.nix
+		/etc/nixos/hardware-configuration.nix
 		./users.nix
-#		./virtualisation.nix
-		./unfree.nix
+		./nvidia.nix
+		#./virtualisation.nix
+		#./unfree.nix
 	];
 }

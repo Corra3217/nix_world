@@ -43,7 +43,7 @@ in
 				redo = snr + "boot" + etc-flag + " && reboot";
 				test = snr + "test" + etc-flag;
 
-				cdf = "cd ~/nix_world/desktop";
+				cdf = "cd ~/nix_world/lines/";
 				rebuildf = snr + "switch" + flake-flag;
 				redof = snr + "boot" + flake-flag + " && reboot";
 				testf = snr + "test" + flake-flag;
