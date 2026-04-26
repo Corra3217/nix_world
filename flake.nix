@@ -8,9 +8,13 @@
 			url = "github:nix-community/home-manager/release-25.11";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+		nixvim = {
+			url = "github:nix-community/nixvim/nixos-25.11";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
-	outputs = { self, nixpkgs, home-manager, ... } @ inputs:  
+	outputs = { self, unstable, nixpkgs, home-manager, nixvim, ... } @ inputs:  
 		let
 		flake_dir = ./.;
 		home_path = ./lines/home;
@@ -29,6 +33,7 @@
 						useGlobalPkgs = true;
 						useUserPackages = true;
 						backupFileExtension = "backup";
+						extraSpecialArgs = { inherit inputs; };
 						users.nixuser = import "${home_path}/home.nix";
 					};
 				}

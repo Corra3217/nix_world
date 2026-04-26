@@ -14,15 +14,19 @@
 		hostName = "NixBox";
 		networkmanager.enable = true;
 		firewall.enable = true;
-		# firewall.allowedUDPPorts = [
-		#   53
-		#   67 
-		# ];
 	};
 
 	time.timeZone = "Australia/Sydney";
 
+  i18n.inputMethod = {
+    enabled = "ibus";
+    ibus.engines = with pkgs.ibus-engines; [
+      libpinyin
+    ];
+  };
+
 	powerManagement.enable = true;
+	programs.dconf.enable = true;
 
 	services = {
 		blueman.enable = true;
@@ -32,6 +36,8 @@
 		pipewire = {
 			enable = true;
 			pulse.enable = true;
+			alsa.enable = true;
+			alsa.support32Bit = true;
 		};
 
 		displayManager.gdm.enable = true;
@@ -49,10 +55,11 @@
 			testpkgs.man-pages-posix
 			testpkgs.gcc
 			testpkgs.clang
+			testpkgs.clang-tools
 			testpkgs.git 
 
 			# user apps
-			# testpkgs.tor-browser
+			testpkgs.tor-browser
 			testpkgs.firefox
 			testpkgs.signal-desktop
 			testpkgs.tigervnc
@@ -72,12 +79,13 @@
 			neofetch
 
 			# system apps
+      gnomeExtensions.ddterm
 			gnome-tweaks
-		        gnome-console
-		        gnome-terminal
-		        gnome-bluetooth
-		        gnome-commander
+      gnome-console
+      gnome-terminal
+      gnome-bluetooth
+      gnome-commander
 			hardinfo2 
-			nil
+      nil
 		];
 	}

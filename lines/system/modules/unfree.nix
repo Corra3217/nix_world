@@ -1,6 +1,8 @@
 { pkgs, lib, ... }:
 {
 	programs.steam.enable = true;
+	programs.steam.gamescopeSession.enable = true;
+
 	nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
 		"steam"
 		"steam-original"
